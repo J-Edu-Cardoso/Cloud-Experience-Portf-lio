@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Experience Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --nvidia-green: #76b900;
+      --light-gray: #f7f7f7;
+      --dark-text: #333;
+      --light-text: #555;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: white;
+      color: var(--dark-text);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .nvidia-green-text {
+      color: var(--nvidia-green);
+    }
+
+    .glass-card {
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(209, 213, 219, 0.3);
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      border-color: var(--nvidia-green);
+    }
+
+    /* Animações customizadas */
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .fade-in-left { opacity: 0; }
+    .fade-in-right { opacity: 0; }
+    .fade-in-left.show { animation: fadeInLeft 1s ease forwards; }
+    .fade-in-right.show { animation: fadeInRight 1s ease forwards; }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+
+<div class="flex min-h-screen">
+  <!-- Sidebar -->
+  <aside id="sidebar" class="w-64 bg-green-950/75 backdrop-blur-lg shadow-2xl flex flex-col items-center p-6 space-y-8 text-white z-20 fixed top-0 left-0 h-full transition-all duration-300">
+    <!-- Logo e Foto -->
+    <div class="text-center">
+      <img 
+        src="src/img/Image.png" 
+        alt="Eduardo Cardoso - Cloud Professional" 
+        class="rounded-full border-4 border-[#76b900] shadow-2xl w-32 h-32 object-cover mx-auto mb-4"
+      >
+      <h1 class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+        CloudPortfolio
+      </h1>
+    </div>
+
+    <!-- Menu de Navegação -->
+    <nav class="flex flex-col justify-around flex-grow text-left w-full px-4">
+      <a href="#home" class="text-lg hover:text-[#76b900] transition-colors duration-300 font-semibold flex items-center"><i class="fas fa-home w-20 text-5xl"></i><span class="nav-text">Início</span></a>
+      <a href="#about" class="text-lg hover:text-[#76b900] transition-colors duration-300 font-semibold flex items-center"><i class="fas fa-user w-20 text-5xl"></i><span class="nav-text">Sobre</span></a>
+      <a href="#skills" class="text-lg hover:text-[#76b900] transition-colors duration-300 font-semibold flex items-center"><i class="fas fa-cogs w-20 text-5xl"></i><span class="nav-text">Habilidades</span></a>
+      <a href="#projects" class="text-lg hover:text-[#76b900] transition-colors duration-300 font-semibold flex items-center"><i class="fas fa-project-diagram w-20 text-5xl"></i><span class="nav-text">Projetos</span></a>
+      <a href="#experience" class="text-lg hover:text-[#76b900] transition-colors duration-300 font-semibold flex items-center"><i class="fas fa-briefcase w-20 text-5xl"></i><span class="nav-text">Experiência</span></a>
+      <a href="#contact" class="text-lg hover:text-[#76b900] transition-colors duration-300 font-semibold flex items-center"><i class="fas fa-envelope w-20 text-5xl"></i><span class="nav-text">Contato</span></a>
+    </nav>
+
+    <!-- Ícones Sociais -->
+
+    <!-- Botão de Recuar -->
+    <button id="toggle-sidebar" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#76b900] text-white transition transform hover:scale-110 hover:shadow-lg hover:shadow-[#76b900]/50 mb-4">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/in/jos%C3%A9-eduardo-cardoso-developer/" target="_blank" 
+           class="w-10 h-10 flex items-center justify-center rounded-full bg-[#76b900] text-white transition transform hover:scale-110 hover:shadow-lg hover:shadow-[#76b900]/50">
+            <i class="fab fa-linkedin-in text-lg"></i>
+        </a>
+        <a href="https://github.com/J-Edu-Cardoso" target="_blank" 
+           class="w-10 h-10 flex items-center justify-center rounded-full bg-[#76b900] text-white transition transform hover:scale-110 hover:shadow-lg hover:shadow-[#76b900]/50">
+            <i class="fab fa-github text-lg"></i>
+        </a>
+    </div>
+  </aside>
+
+  <!-- Conteúdo Principal -->
+  <main id="main-content" class="flex-1 ml-64 p-8 bg-gray-900 text-white transition-all duration-300">
+    <!-- Hero -->
+    <section id="home" class="relative text-center py-32 bg-gray-900 overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#76b900] mb-6 font-poppins drop-shadow-xl">
+          Olá, eu sou Eduardo Cardoso
+        </h1>
+        <h2 class="text-2xl md:text-3xl lg:text-5xl text-gray-600 font-semibold mb-10 font-poppins drop-shadow-md">
+          Desenvolvedor e DevOps | AWS Cloud Practitioner
+        </h2>
+        <p class="max-w-4xl mx-auto text-xl md:text-2xl lg:text-3xl text-gray-600 mb-14 leading-relaxed font-light">
+          Como <span class="text-[#76b900] font-medium">Desenvolvedor e DevOps</span>,
+           desenvolvo projetos práticos em nuvem AWS adotando boas práticas de DevOps,
+           e aprimoro minhas habilidades com desafios reais de mercado.
+        </p>
+        <div class="flex justify-center space-x-6 mt-10">
+          <a href="#contact" class="bg-[#76b900] text-white px-10 py-5 text-xl rounded-lg font-semibold hover:bg-[#68a300] transition">Contate-me</a>
+          <a href="#projects" class="border border-gray-400 text-gray-700 px-10 py-5 text-xl rounded-lg font-semibold hover:bg-gray-200 transition">Ver Projetos</a>
+        </div>
+      </div>
+      <div class="flex justify-center gap-12 mt-20">
+        <div class="flex flex-col items-center transform translate-y-4">
+            <img src="src/img/ec2.jpg" alt="Amazon EC2 Service" class="w-24 h-24 mb-3 hover:scale-110 transition">
+          <p class="text-gray-200 font-medium text-lg">EC2</p>
+        </div>
+        <div class="flex flex-col items-center transform -translate-y-4">
+            <img src="src/img/vpc.png" alt="Amazon VPC Service" class="w-24 h-24 mb-3 hover:scale-110 transition">
+          <p class="text-gray-200 font-medium text-lg">VPC</p>
+        </div>
+        <div class="flex flex-col items-center transform translate-y-4">
+            <img src="src/img/s3.png" alt="Amazon S3 Storage Service" class="w-24 h-24 mb-3 hover:scale-110 transition">
+          <p class="text-gray-200 font-medium text-lg">S3</p>
+        </div>
+        <div class="flex flex-col items-center transform -translate-y-4">
+            <img src="src/img/rds.jpg" alt="Amazon RDS Database Service" class="w-24 h-24 mb-3 hover:scale-110 transition">
+          <p class="text-gray-200 font-medium text-lg">RDS</p>
+        </div>
+        <div class="flex flex-col items-center transform translate-y-4">
+            <img src="src/img/iam.png" alt="AWS IAM Identity and Access Management" class="w-24 h-24 mb-3 hover:scale-110 transition">
+          <p class="text-gray-200 font-medium text-lg">IAM</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center">
+          <h3 class="text-6xl font-bold text-[#76b900] mb-6 font-poppins">
+            AWS Technical Trainer
+          </h3>
+          <p class="text-gray-600 mb-8 leading-relaxed font-light text-lg max-w-2xl mx-auto">
+            Atuo como <span class="text-[#76b900] font-medium">Autônomo</span>, 
+            profissional em <span class="text-gray-700">Cloud Computing</span> 
+            com foco em arquiteturas escaláveis e automação de infraestrutura na AWS. 
+            Meu compromisso é com aprendizado contínuo, mentoria técnica e boas práticas de mercado.
+          </p>
+          <a 
+            href="src/Curriculo.pdf" 
+            download 
+            class="bg-[#76b900] text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:bg-[#68a300] transition"
+          >
+            📄 Download CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-cyan-400">Minhas Habilidades</h2>
+        <div class="mb-16 fade-in-left">
+          <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Cloud & DevOps</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <a href="#" target="_blank" class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fab fa-aws text-4xl text-orange-400 mb-3"></i>
+              <span class="font-medium text-gray-700">AWS</span>
+            </a>
+            <a href="#" target="_blank" class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fab fa-linux text-4xl text-gray-300 mb-3"></i>
+              <span class="font-medium text-gray-700">Linux</span>
+            </a>
+            <a href="#" target="_blank" class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fab fa-docker text-4xl text-blue-400 mb-3"></i>
+              <span class="font-medium text-gray-700">Docker</span>
+            </a>
+            <a href="#" target="_blank" class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fas fa-code text-4xl text-indigo-400 mb-3"></i>
+              <span class="font-medium text-gray-700">Terraform</span>
+            </a>
+          </div>
+        </div>
+        <div class="mb-16 fade-in-right">
+          <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Versionamento & CI/CD</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fab fa-git-alt text-4xl text-red-500 mb-3"></i>
+              <span class="font-medium text-gray-700">Git</span>
+            </div>
+            <div class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fab fa-github text-4xl text-gray-200 mb-3"></i>
+              <span class="font-medium text-gray-700">GitHub</span>
+            </div>
+            <div class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fas fa-cogs text-4xl text-blue-400 mb-3"></i>
+              <span class="font-medium text-gray-700">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+        <div class="mb-16 fade-in-left">
+          <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Frontend</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fab fa-html5 text-4xl text-orange-500 mb-3"></i>
+              <span class="font-medium text-gray-700">HTML</span>
+            </div>
+            <div class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fab fa-css3-alt text-4xl text-blue-500 mb-3"></i>
+              <span class="font-medium text-gray-700">CSS</span>
+            </div>
+            <div class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fab fa-js-square text-4xl text-yellow-400 mb-3"></i>
+              <span class="font-medium text-gray-700">JavaScript</span>
+            </div>
+          </div>
+        </div>
+        <div class="mb-16 fade-in-right">
+          <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Backend & Linguagens</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fab fa-python text-4xl text-green-400 mb-3"></i>
+              <span class="font-medium text-gray-700">Python</span>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in-left">
+          <h3 class="text-xl font-semibold mb-6 text-center text-purple-400">Ferramentas</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div class="tech-icon glass-card p-6 flex flex-col items-center">
+              <i class="fas fa-code text-4xl text-indigo-400 mb-3"></i>
+              <span class="font-medium text-gray-700">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-cyan-400">Projetos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="project-card glass-card overflow-hidden fade-in-up">
+            <div class="h-48 bg-gray-100 flex items-center justify-center">
+              <i class="fab fa-aws text-6xl text-orange-400"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                <a href="https://github.com/HebertonGeovane/TechStore2" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                  Tech-Full-Store | Projeto Final AWS re/Start
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-4">
+                DevStore é uma cadeia fictícia de lojas voltadas para o comércio de tecnologia. Como parte dessa cadeia, temos a DevShop, um e-commerce moderno que oferece produtos eletrônicos com entrega rápida e segura. Este projeto foi desenvolvido com o objetivo de aplicar os conhecimentos adquiridos ao longo do curso AWS re/Start, simulando um cenário real de implantação de uma aplicação web escalável, segura e altamente disponível na AWS.
+              </p>
+            </div>
+          </div>
+          <div class="project-card glass-card overflow-hidden fade-in-up">
+            <div class="h-48 bg-gray-100 flex items-center justify-center">
+              <i class="fab fa-aws text-6xl text-orange-400"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                <a href="https://github.com/J-Edu-Cardoso/deploy-aws-ec2-projeto-mundo-invertido" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                  Deploy na AWS EC2 - Mundo Invertido
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Projeto de deploy de uma aplicação web estática, temática do "Mundo Invertido", em uma instância Amazon EC2. Este laboratório prático envolve a configuração de um servidor web, gerenciamento de instâncias e a publicação de um site na nuvem da AWS.
+              </p>
+            </div>
+          </div>
+          <div class="project-card glass-card overflow-hidden fade-in-up">
+            <div class="h-48 bg-gray-100 flex items-center justify-center">
+              <i class="fas fa-network-wired text-6xl text-purple-400"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                <a href="https://github.com/HebertonGeovane/Projeto-Terraform-AWS-IaC" target="_blank" class="text-cyan-400 hover:text-cyan-300">
+                  Projeto Terraform AWS IaC
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Projeto com objetivo provisionar uma Infraestrutura completa AWS utilizando Terraform. A arquitetura inclui uma VPC personalizada com Sub-Redes públicas e privadas, um Balanceador de Carga, Instâncias EC2, um Banco de Dados RDS, um Grupo de Segurança e integrações com o SNS para notificações.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-cyan-400">Experiência</h2>
+            <div class="max-w-4xl mx-auto space-y-12">
+                <div class="relative timeline-item pl-16">
+                    <div class="absolute left-0 top-0 w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-cyan-500 transition">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-2xl font-bold text-gray-100">Graduação em Análise e Desenvolvimento de Sistemas</h3>
+                        <span class="bg-cyan-100 text-cyan-900 px-4 py-1 rounded-full text-sm font-semibold">
+                        2023 - 2025 (Cursando 4º Período)
+                        </span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-purple-400 mb-4">Newton Paiva</h4>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-lg">
+                        Atualmente em transição de carreira do setor industrial para a área de tecnologia, estou no 4º período do curso de Análise e Desenvolvimento de Sistemas, onde tenho me dedicado ao aprendizado de programação, desenvolvimento web e arquitetura de sistemas.
+                    </p>
+                    </div>
+                </div>
+                <div class="relative timeline-item pl-16">
+                    <div class="absolute left-0 top-0 w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <i class="fab fa-react text-xl"></i>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 hover:border-cyan-500 transition">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-2xl font-bold text-gray-100">Front-end Development (React)</h3>
+                        <span class="bg-cyan-100 text-cyan-900 px-4 py-1 rounded-full text-sm font-semibold">
+                        2024 - 2025
+                        </span>
+                    </div>          <h4 class="text-xl font-semibold text-purple-400 mb-4"><a href="https://github.com/J-Edu-Cardoso/projeto-chatbot-aws-bedrock" target="_blank" class="hover:underline">Chatbot com AWS Bedrock</a></h4>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-lg">
+                        Desenvolvimento de um chatbot inteligente utilizando <strong class="text-cyan-400">AWS Bedrock</strong> para processamento de linguagem natural e <strong class="text-cyan-400">React</strong> para a interface do usuário. O projeto demonstra habilidades em:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2 text-lg">
+                        <li><span class="text-cyan-400 font-semibold">Inteligência Artificial:</span> Integração com modelos de fundação da AWS para criar conversas fluidas e contextuais.</li>
+                        <li><span class="text-cyan-400 font-semibold">Desenvolvimento Front-End:</span> Construção de uma interface reativa e moderna com React e Tailwind CSS.</li>
+                        <li><span class="text-cyan-400 font-semibold">Computação em Nuvem:</span> Utilização de serviços serverless da AWS para uma arquitetura escalável e de baixo custo.</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-cyan-400">Certificações</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7110650848774402048/" target="_blank" class="transform transition hover:scale-110 hover:shadow-cyan-500/50 hover:shadow-lg rounded-xl relative">
+            <div class="absolute inset-8 bg-white opacity-90 rounded-lg"></div>
+            <img src="src/img/cloud-practitioner.png" alt="AWS Cloud Practitioner" class="w-40 rounded-lg relative z-10">
+          </a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7313500578481946625/" target="_blank" class="transform transition hover:scale-110 hover:shadow-cyan-500/50 hover:shadow-lg rounded-xl relative">
+            <div class="absolute inset-8 bg-white opacity-90 rounded-lg"></div>
+            <img src="src/img/solutions-architect.png" alt="AWS Cloud Practitioner" class="w-40 rounded-lg relative z-10">
+          </a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7315849102972411904/" target="_blank" class="transform transition hover:scale-110 hover:shadow-cyan-500/50 hover:shadow-lg rounded-xl relative">
+            <div class="absolute inset-8 bg-white opacity-90 rounded-lg"></div>
+            <img src="src/img/ia-practitioner.png" alt="AWS Cloud Practitioner" class="w-40 rounded-lg relative z-10">
+          </a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7320752063263465475/" target="_blank" class="transform transition hover:scale-110 hover:shadow-cyan-500/50 hover:shadow-lg rounded-xl relative">
+            <div class="absolute inset-8 bg-white opacity-90 rounded-lg"></div>
+            <img src="src/img/developer-associate.png" alt="AWS Cloud Practitioner" class="w-40 rounded-lg relative z-10">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section --> 
+    <section id="contact" class="py-20 bg-gray-50 text-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 font-poppins">Entre em Contato</h2>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6 font-poppins">Vamos conversar sobre seu projeto</h3>
+                    <p class="mb-8 text-gray-600 font-poppins">
+                        Estou disponível para oportunidades freelance, consultorias e projetos desafiadores. 
+                    </p>
+                    <div class="space-y-4 font-poppins">
+                        <div class="flex items-start">
+                            <div class="bg-[#76b900] text-white p-3 rounded-full mr-4 flex items-center justify-center">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600">dcardprint@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-[#76b900] text-white p-3 rounded-full mr-4 flex items-center justify-center">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">WhatsApp</h4>
+                                <p class="text-gray-600">+55 (33) 99706-2196</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-[#76b900] text-white p-3 rounded-full mr-4 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Localização</h4>
+                                <p class="text-gray-600">Governador Valadares-MG, Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white text-gray-700 py-8 border-t">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center font-poppins">
+          <div class="text-2xl font-bold mb-4 md:mb-0 tracking-wide bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            CloudPortfolio
+          </div>
+          <div class="text-base text-gray-500 opacity-80">
+            © 2025 <span class="font-medium text-gray-800">José Eduardo Cardoso</span>.  
+            Todos os direitos reservados.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
+  
+  <script>
+    // IntersectionObserver para animar
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
+  </script>
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.getElementById('main-content');
+  const toggleButton = document.getElementById('toggle-sidebar');
+  const navTexts = document.querySelectorAll('.nav-text');
+  const toggleIcon = toggleButton.querySelector('i');
+
+  toggleButton.addEventListener('click', () => {
+    sidebar.classList.toggle('w-64');
+    sidebar.classList.toggle('w-20');
+    mainContent.classList.toggle('ml-64');
+    mainContent.classList.toggle('ml-20');
+
+    navTexts.forEach(text => {
+      text.classList.toggle('hidden');
+    });
+
+    if (sidebar.classList.contains('w-20')) {
+      toggleIcon.classList.remove('fa-chevron-left');
+      toggleIcon.classList.add('fa-chevron-right');
+    } else {
+      toggleIcon.classList.remove('fa-chevron-right');
+      toggleIcon.classList.add('fa-chevron-left');
+    }
+  });
+</script>
+</body>
+</html>
