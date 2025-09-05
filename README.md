@@ -13,7 +13,7 @@ Este é o portfólio de Eduardo Cardoso, destacando experiências e habilidades 
    ```
    npm start
    ```
-4. Acesse o site em: http://localhost:3000
+4. Acesse o site em: https://dctech-portfolio.s3.us-west-2.amazonaws.com/cloudportfolio/index.html
 
 ## Estrutura do Projeto
 
