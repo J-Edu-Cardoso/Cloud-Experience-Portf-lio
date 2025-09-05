@@ -151,7 +151,7 @@ Não utilize para fins comerciais sem autorização.
 
 ## Autor
 🧑‍🏫 **Heberton Geovane**  
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/heberton-geovane/)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jos%C3%A9-eduardo-cardoso-developer/)
 
 ---
 
