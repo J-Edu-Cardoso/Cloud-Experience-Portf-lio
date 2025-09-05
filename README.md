@@ -27,7 +27,7 @@ Este site pode ser facilmente implantado em serviços como:
 - Netlify
 - GitHub Pages
 - AWS Amplify
-- Outros serviços de hospedagem estática
+- Amazon S3 
 =======
 # CloudPortfolio | Exemplo de Portfólio Cloud , Desenvolvedor e DevOps
 
